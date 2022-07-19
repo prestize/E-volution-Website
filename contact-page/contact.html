@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Volution</title>
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    />
+    <link rel="stylesheet" href="/homepage/styles.css" />
+  </head>
+
+  <body onload="clickable()">
+    
+    <form action="/homepage/logout.php" method="POST" id="logoutForm" name="logoutForm" hidden>
+      <input type="number" value="0" name="logNum">
+    </form>
+
+    <script>
+      function clickable(){
+        var loggedinUser = localStorage.getItem("userLoggedIn");
+
+          if(loggedinUser==0){
+            document.getElementById('wishlist').href = "/log-in-page/log-in.php";
+            document.getElementById('mywishlist').href = "/log-in-page/log-in.php";
+            document.getElementById('signin').href = "/log-in-page/log-in.php";
+            document.getElementById('signinfooter').href = "/log-in-page/log-in.php";
+            document.getElementById("add-wishlist").onclick = function () {
+                        location.href = "/log-in-page/log-in.php";
+                    };
+          }
+          else{
+
+            document.getElementById('wishlist').href = "/wishlist/wishlist.php";
+            document.getElementById('mywishlist').href = "/wishlist/wishlist.php";
+            document.getElementById('signin').innerHTML = "Log Out";
+            document.getElementById('signin').onclick = function(){
+              document.logoutForm.submit();
+            };
+            document.getElementById('signinfooter').href = "/index.php";
+          }
+      };
+    </script>
+    <section id="header">
+      <h1>E-VOLUTION</h1>
+      <div>
+        <ul id="navbar">
+          <li><a href="/index.php">Home</a></li>
+          <li><a href="/shop-page/shop.html">Shop</a></li>
+          <li><a href="/blog-page/blog.html">Blog</a></li>
+          <li><a href="#" id="signin">Sign In</a></li>
+          <li><a class="active" href="/contact-page/contact.html">Contact</a></li>
+          <li>
+            <a href="#" id="wishlist"><i class="far fa-heart"></i></a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="page-header" class="contact-header">
+      <h2 class="about-h2">Contact Us</h2>
+      <p class="about-p">We love to hear from you.</p>
+    </section>
+
+    <section id="contact-details" class="section-p1">
+      <div class="details">
+        <span>GET IN TOUCH</span>
+        <h2>Visit our showrooms and physical stores</h2>
+        <h3>Main Office</h3>
+        <div>
+          <li>
+            <i class="fal fa-map"></i>
+            <p>1016 Anonas, Sta. Mesa, Maynila, Kalakhang Maynila</p>
+          </li>
+
+          <li>
+            <i class="fal fa-envelope"></i>
+            <p>contact@samplecontact.com</p>
+          </li>
+
+          <li>
+            <i class="fal fa-phone-alt"></i>
+            <p>contact@samplecontact.com</p>
+          </li>
+
+          <li>
+            <i class="fal fa-clock"></i>
+            <p>Monday to Saturday: 10:00 am to 6:00 pm</p>
+          </li>
+        </div>
+      </div>
+
+      <div class="map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.0200323856807!2d121.00856691527902!3d14.597934381054591!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c9dd976ededf%3A0xbaaa357c5585b8c2!2sPolytechnic%20University%20of%20the%20Philippines!5e0!3m2!1sen!2sph!4v1652546342858!5m2!1sen!2sph"
+          width="800"
+          height="600"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </section>
+
+    <section id="form-details">
+      <form action="formcontact.php" method="POST" id="contactform" name="contactform">
+        <span>LEAVE A MESSAGE</span>
+        <h2>We love to hear from you</h2>
+        <input type="text" placeholder="Your Name" name="name" required/>
+        <input type="email" placeholder="Email" name="email" required/>
+        <input type="text" placeholder="Subject" name="subject" required/>
+        <textarea
+          cols="30"
+          rows="10"
+          placeholder="Your Message"
+          name="message"
+          required
+        ></textarea>
+        <button class="normal" onclick="window.contactform.submit()">Submit</button>
+      </form>
+
+      <div class="people">
+        <div>
+          <img src="/iconm.png" alt="ako" />
+          <p>
+            <span>James Luis B. Blanco</span> Student | BSCS 2-4 <br />
+            +639123456789 <br />blancojames88@gmail.com
+          </p>
+        </div>
+
+        <div>
+          <img src="/iconf.png" alt="ikaw" />
+          <p>
+            <span>Maricris M. Micael</span> Student | BSCS 2-4 <br />
+            +639123456789 <br />micaelmaricris@gmail.com
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="newsletter" class="section-p1 section-m1">
+      <div class="newstext">
+        <h4>Sign Up For Newsletters</h4>
+        <p>
+          Get E-mail updates about our latest shop and
+          <span>special offers.</span>
+        </p>
+      </div>
+
+      <div class="form">
+        <input type="text" placeholder="Your email address" />
+        <button class="normal">Sign Up</button>
+      </div>
+    </section>
+    <footer class="section-p1">
+      <div class="col">
+
+        <img class="logo" src="/logo1.png" alt="">
+        <h4>Contact</h4>
+        <p><strong>Address:</strong> 1016 Anonas, Sta. Mesa, Maynila, Kalakhang Maynila</p>
+        <p><strong>Phone:</strong> (+63) 9123456789/ (02) 987 6543</p>
+        <p><strong>Hours:</strong> 10:00 - 18:00, Mon-Sat</p>
+
+        <div class="follow">
+          <h4>Follow Us</h4>
+          <div class="icon">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-pinterest-p"></i>
+            <i class="fab fa-youtube"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <h4>About</h4>
+        <a href="/about-page/about.html">About Us</a>
+        <a href="/about-page/termsconditions.html">Terms and Conditions</a>
+        <a href="/contact-page/contact.html">Contact Us</a>
+      </div>
+
+      <div class="col">
+        <h4>My Account</h4>
+        <a href="#" id="signinfooter">Sign In</a>
+        <a href="/wishlist/wishlist.php" id="mywishlist">My Wishlist</a>
+        <a href="#" id="ordersfooter">Track My Order</a>
+        <a href="/about-page/help.html">Help</a>
+      </div>
+
+      <div class="col install">
+        <h4>Install App</h4>
+        <p>From App Store or Google Play</p>
+        <div class="row">
+          <img src="/homepage/imgs/apps.png" alt="apps">
+        </div>
+        <p>Secured Payment Gateways</p>
+        <img src="/homepage/imgs/payments.png" alt="payments">
+      </div>
+
+      <div class="copyright">
+        <p>BSCS 2-4, CS-Free Elective 2</p>
+      </div>
+    </footer>
+  </body>
+</html>
