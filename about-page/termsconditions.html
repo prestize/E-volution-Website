@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Volution</title>
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/homepage/styles.css" />
+  </head>
+
+  <body  onload="setUser()">
+
+      <form action="/homepage/logout.php" method="POST" id="logoutForm" name="logoutForm" hidden>
+        <input type="number" value="0" name="logNum">
+      </form>
+        
+    <section id="header">
+      <img src="/logodark.png" alt="logo" class="logo">
+      <div>
+        <ul id="navbar">
+          <li><a href="/index.php">Home</a></li>
+          <li><a href="/shop-page/shop.html">Shop</a></li>
+          <li><a href="/blog-page/blog.html">Blog</a></li>
+          <li><a href="#" id="signin">Sign In</a></li>
+          <li><a href="/contact-page/contact.html">Contact</a></li>
+          <li>
+            <a href="#" id="wishlist"><i class="far fa-heart"></i></a>
+          </li>
+          <li>
+            <a href="#" id="orders"><i class='bx bx-car'></i></a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <script>
+    function setUser(){
+      var loggedinUser = localStorage.getItem("userLoggedIn");
+   
+
+     
+      if(loggedinUser==0 || loggedinUser == null){
+        document.getElementById('wishlist').href = "/log-in-page/log-in.php";
+        document.getElementById('mywishlist').href = "/log-in-page/log-in.php";
+        document.getElementById('signin').href = "/log-in-page/log-in.php";
+        document.getElementById('signinfooter').href = "/log-in-page/log-in.php";
+        document.getElementById('orders').href ="/log-in-page/log-in.php";
+        document.getElementById('ordersfooter').href = "/log-in-page/log-in.php";
+      }
+      else{
+        document.getElementById('wishlist').href = "/wishlist/wishlist.php";
+              document.getElementById('mywishlist').href = "/wishlist/wishlist.php";
+        
+        document.getElementById('signin').innerHTML = "Log Out";
+
+        document.getElementById('signin').onclick = function(){
+          document.logoutForm.submit();
+        };
+        document.getElementById('signinfooter').href = "/index.php";
+
+        document.getElementById('orders').href = "/shop-page/orders.php";
+        document.getElementById('ordersfooter').href = "/shop-page/orders.php";
+      }
+      
+    }; 
+  </script>
+
+    <section id="page-header" class="about-header">
+      <h2 class="about-h2">Terms and Conditions</h2>
+    </section>
+
+    <section id="about-head" class="section-p1">
+      <img src="/terms.png" alt="about us vector">
+      <div>
+        <p>Welcome to E-Volution. Our team provides services to subject to notices, terms and conditions as set out below. By accessing, browsing, or shopping on this website, you agree to all the terms and conditions in this agreement. Please read them carefully. </p>
+        <h2>For Buyers</h2>
+        <p>1. Information about a particular vehicle deal published on our website is supplied by the manufacturer or distributor,
+           not by us. The price and other terms of any sale remain the subject to direct negotiation between the buyer and seller.
+            The prices listed on the Website often exclude sales tax, finance charges, title, license, regulatory, dealer documentary, 
+            emission testing, and compliance fees, all of which may be added to the listed price to arrive at the final sale price of 
+            a particular vehicle.
+            <br> <br>
+          2. The warranty displayed on the website is under the brand’s responsibility. 
+          In case of defective products, the brand or manufacturer will handle the payment for repair or replacement of the product.
+          <br><br>
+          3.	Buyers will directly pay to the brand and not our company. The preferred payment method of every transaction are VISA, Apple Pay, Mastercard, and Google Pay. 
+          In case the buyer wants to use another payment method, this should be requested to the brand.
+          <br><br>
+          4.	You agree that you will not use, reproduce and/or publish any material comprising the results of searches made from our database of deals, new cars, new motorcycles, new trucks, insurance services, car repair services, car rental service, car financing services and/or any other products or services found on the website. In particular, you must not use the contact details provided by advertisers 
+          of vehicles to contact such advertisers other than in connection with a genuine inquiry relating to the deal or vehicle in question.
+          <br><br>
+          5.	The website publishes advertisements placed by third parties to advertise their vehicle and other goods and/or services. We do not own the vehicles or goods advertised for sale on the Website and have no liability for any losses that you may incur as a result of purchasing a vehicle, goods and/or any services advertised by third parties. If you choose to purchase a vehicle, goods and/or services advertised for sale by third parties, 
+          the contract will be between you and the third-party advertiser and not with us.
+          <br><br>
+          6.	We reserve the right to remove any content we believe is illegal or offensive in any manner and to ban any user from accessing 
+          the website regardless of any active advertising that the user may have on the website. 
+        </p>
+        <h2>For Sellers</h2>
+        <p>1.	Each and every Seller agrees to hold E-volution harmless from all claims, causes of action, damages and judgments arising out of any removal of any Content or product listings pursuant to or in relation to any intellectual property infringement claim.
+          <br> <br>
+          2.	After Buyer makes payment for his/her order, Seller should send the commission from the transaction to our company’s account using the preferred payment method: VISA, Apple Pay, Google Pay and Mastercard. The commission should be sent to our account under 2 weeks, if ever the Seller haven’t sent the money yet by this time, there will be fee that they need to pay (10,000php to 20,000php).
+          <br> <br>
+          3.	The Seller is responsible for warranty and delivery fee of the product.
+          <br> <br>
+          4.	E-volution may require Seller or Buyer to provide his or her personal data such as recent identity photograph, bank account details and/or any other such documentation necessary, for verification purposes, including verification required by third party payment processing and logistic service providers. Seller/Buyer hereby grants E-volution his/her consent to use or provide to third party his/her personal data to facilitate his/her use of the Site. Further, Seller/Buyer authorizes Shopee to use his/her personal data to make any inquires we consider necessary to validate his/her identity with the appropriate entity such as his/her bank.
+          
+        </p>
+      </div>
+    </section>
+
+    <section id="features">
+      <section id="feature" class="section-p1">
+        <div class="fe-box">
+          <img src="/homepage/imgs/features/free shipping.png" alt="free shipping" />
+          <h6>Free Shipping</h6>
+        </div>
+
+        <div class="fe-box">
+          <img src="/homepage/imgs/features/order online.png" alt="Online Order" />
+          <h6>Online Order</h6>
+        </div>
+
+        <div class="fe-box">
+          <img src="/homepage/imgs/features/save money.png" alt="Save Money" />
+          <h6>Save Money</h6>
+        </div>
+
+        <div class="fe-box">
+          <img src="/homepage/imgs/features/promote.png" alt="Promotions" />
+          <h6>Promotions</h6>
+        </div>
+
+        <div class="fe-box">
+          <img src="/homepage/imgs/features/selling.png" alt="Happy Sell" />
+          <h6>Happy Sell</h6>
+        </div>
+
+        <div class="fe-box">
+          <img src="/homepage/imgs/features/call.png" alt="F24/7Support" />
+          <h6>24/7 Support</h6>
+        </div>
+      </section>
+    </section>
+
+    <section id="newsletter" class="section-p1 section-m1">
+      <div class="newstext">
+        <h4>Sign Up For Newsletters</h4>
+        <p>Get E-mail updates about our latest shop and <span>special offers.</span></p>
+      </div>
+
+      <div class="form">
+        <input type="text" placeholder="Your email address">
+        <button class="normal">Sign Up</button>
+      </div>
+    </section>
+    
+    <footer class="section-p1">
+      <div class="col">
+
+        <img class="logo" src="/logo1.png" alt="">
+        <h4>Contact</h4>
+        <p><strong>Address:</strong> 1016 Anonas, Sta. Mesa, Maynila, Kalakhang Maynila</p>
+        <p><strong>Phone:</strong> (+63) 9123456789/ (02) 987 6543</p>
+        <p><strong>Hours:</strong> 10:00 - 18:00, Mon-Sat</p>
+
+        <div class="follow">
+          <h4>Follow Us</h4>
+          <div class="icon">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-pinterest-p"></i>
+            <i class="fab fa-youtube"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <h4>About</h4>
+        <a href="/about-page/about.html">About Us</a>
+        <a href="/about-page/termsconditions.html">Terms and Conditions</a>
+        <a href="/contact-page/contact.html">Contact Us</a>
+      </div>
+
+      <div class="col">
+        <h4>My Account</h4>
+        <a href="#" id="signinfooter">Sign In</a>
+        <a href="/wishlist/wishlist.php" id="mywishlist">My Wishlist</a>
+        <a href="#" id="ordersfooter">Track My Order</a>
+        <a href="/about-page/help.html">Help</a>
+      </div>
+
+      <div class="col install">
+        <h4>Install App</h4>
+        <p>From App Store or Google Play</p>
+        <div class="row">
+          <img src="/homepage/imgs/apps.png" alt="apps">
+        </div>
+        <p>Secured Payment Gateways</p>
+        <img src="/homepage/imgs/payments.png" alt="payments">
+      </div>
+
+      <div class="copyright">
+        <p>BSCS 2-4, CS-Free Elective 2</p>
+      </div>
+    </footer>
+  </body>
+</html>
