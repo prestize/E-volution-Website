@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+*{
+  font-family: "Poppins", sans-serif;
+}
+
+
+.compare-table {
+  width: 1000px;
+  padding: 20px 20px;
+}
+
+/* Style the table */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 77%;
+  border: 1px solid black;
+}
+
+/* Style table headers and table data */
+th,
+td {
+  text-align: center;
+  padding: 30px;
+  border: 1px solid black;
+}
+
+th {
+  font-weight: 700;
+}
+
+td {
+  font-weight: 450;
+}
+
+th:first-child,
+td:first-child {
+  text-align: left;
+}
+
+/* Zebra-striped table rows */
+tr:nth-child(odd) {
+  background-color: #13424c;
+  color: white;
+}
+
+.fa-check {
+  color: green;
+}
+
+.fa-remove {
+  color: red;
+}
+
+.icon{
+  color: #13424c;
+  font-size: 25px;
+}
+
+/* compare-imgs */
+.compare-imgs{
+  position:absolute;
+  top: 425px;
+  right: 11px;
+  width: 737px;
+  height: 505px;
+  border: 1px solid black;
+}
+
+.choice{
+  background-color: #13424c;
+  height: 33px;
+}
+
+span{
+  font-size: large;
+  padding: 30px 30px;
+  color: white;
+}
+
+.dropbox{
+  padding-left: 4px;
+  color: white;
+}
+
+.contents{
+  padding: 0 20px;
+}
+
+.compare-img{
+  width: 100%;
+  height: 470px;
+}
+/* compare-imgs2 */
+
+.compare-imgs2{
+  position:absolute;
+  top: 933px;
+  right: 11px;
+  width: 737px;
+  height: 505px;
+  border: 1px solid black;
+}
+
+#title1{
+    color:white;
+}
+
+#title2{
+    color:white;
+}
+
+#broch1{
+    color:white;
+}
+
+#broch2{
+    color:white;
+}
+
+#compare-page-header{
+    background-image: url(/shop-page/imgs/shop-hero.jpg);
+    width: 100%;
+    height: 45vh;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 14px;
+}

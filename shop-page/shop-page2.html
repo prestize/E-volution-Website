@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Volution</title>
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    />
+    <link
+    href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+    rel="stylesheet"
+  />
+    <link rel="stylesheet" href="/homepage/styles.css" />
+    <script src="/cart-page/script.js" async></script>
+  </head>
+
+  <body onclick="clickable()">
+ 
+    <form action="/homepage/logout.php" method="POST" id="logoutForm" name="logoutForm" hidden>
+      <input type="number" value="0" name="logNum">
+    </form>
+    <script>
+
+            function clickable(){
+              var loggedinUser = localStorage.getItem("userLoggedIn");
+            
+              if(loggedinUser==0){
+                document.getElementById('wishlist').href = "/log-in-page/log-in.php";
+                document.getElementById('mywishlist').href = "/log-in-page/log-in.php";
+                document.getElementById('signin').href = "/log-in-page/log-in.php";
+                document.getElementById('signinfooter').href = "/log-in-page/log-in.php";
+                document.getElementById('orders').href ="/log-in-page/log-in.php";
+            document.getElementById('ordersfooter').href = "/log-in-page/log-in.php";
+                document.getElementById("add-wishlist").onclick = function () {
+                            location.href = "/log-in-page/log-in.php";
+                        };
+              }
+              else{
+                
+                document.getElementById('wishlist').href = "/wishlist/wishlist.php";
+              document.getElementById('mywishlist').href = "/wishlist/wishlist.php";
+                document.getElementById('signin').innerHTML = "Log Out";
+                document.getElementById('signin').onclick = function(){
+                  document.logoutForm.submit();
+                };
+                document.getElementById('signinfooter').href = "/index.php";
+                   
+              document.getElementById('orders').href = "/shop-page/orders.php";
+              document.getElementById('ordersfooter').href = "/shop-page/orders.php";
+            
+              }
+            };
+
+
+            function store(clicked_id){
+               
+                  // (A) VARIABLES TO PASS
+                   var idProd = clicked_id;
+                
+                  // (B) SAVE TO LOCAL STORAGE
+                  // (B1) FLAT STRING OR NUMBER
+                  // LOCALSTORAGE.SETITEM("KEY", "VALUE");
+                  localStorage.setItem("idProd", idProd);
+                 
+                  // (B2) ARRAY OR OBJECT
+                  // LOCAL STORAGE CANNOT STORE ARRAY AND OBJECTS
+                  // JSON ENCODE BEFORE STORING, CONVERT TO STRING
+                  location.href = "/shop-page/product-page.php";
+                  
+            };
+            
+            function addWishlist(clicked_id){
+              var loggedinUser = localStorage.getItem("userLoggedIn");
+              if(loggedinUser==0){
+                location.href = "/log-in-page/log-in.php";
+              }
+              else{
+                var idProd = clicked_id;
+                localStorage.setItem("idProd", idProd);
+                var isAddWishlist = 1;
+                sessionStorage.setItem("isAddWishlist", isAddWishlist);
+                location.href = "/shop-page/product-page.php";
+              }
+            };
+    </script>
+    
+    <section id="header">
+      <img src="/logodark.png" alt="logo" class="logo">
+      <div>
+        <ul id="navbar">
+          <li><a href="/index.php">Home</a></li>
+          <li><a  class="active" href="/shop-page/shop.html">Shop</a></li>
+          <li><a  href="/blog-page/blog.html">Blog</a></li>
+          <li><a href="#" id="signin">Sign In</a></li>
+          <li><a href="/contact-page/contact.html">Contact</a></li>
+          <li>
+            <a href="#" id="wishlist"><i class="far fa-heart"></i></a>
+          </li>
+          <li>
+            <a href="#" id="orders"><i class='bx bx-car'></i></a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="page-header">
+      <h2>Power at your fingertips</h2>
+      <p>Get discounts when you buy your first e-vehicle!</p>
+    </section>
+    
+    
+    <section id="products1">
+      <section id="product1" class="section-p1">
+        <div class="pro-container">
+          <div class="pro">
+              <div id="105" onClick="store(this.id)">
+            <img src="https://i.imgur.com/vOn9k7S.jpg" alt="car 17" />
+            <div class="des">
+              <span>Kia</span>
+              <h5>Sorento PHEV</h5>
+              <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <h4 class="price">₱2,444,404</h4>
+            </div>
+            </div>
+            <i id="105" onclick="addWishlist(this.id)" class="fal fa-heart heart"></i>
+          </div> 
+        </div>
+      </section>
+    </section>
+
+    <section id="pagination" class="section-p1">
+      <a href="/shop-page/shop.html"><i class="fal fa-long-arrow-alt-left"></i></a>
+      <a href="/shop-page/shop.html">1</a>
+      <a class="active" href="#">2</a>
+    </section>
+
+    <section id="newsletter" class="section-p1 section-m1">
+      <div class="newstext">
+        <h4>Sign Up For Newsletters</h4>
+        <p>
+          Get E-mail updates about our latest shop and
+          <span>special offers.</span>
+        </p>
+      </div>
+
+      <div class="form">
+        <input type="text" placeholder="Your email address" />
+        <button class="normal">Sign Up</button>
+      </div>
+    </section>
+
+    <footer class="section-p1">
+      <div class="col">
+
+        <img class="logo" src="/logo1.png" alt="">
+        <h4>Contact</h4>
+        <p><strong>Address:</strong> 1016 Anonas, Sta. Mesa, Maynila, Kalakhang Maynila</p>
+        <p><strong>Phone:</strong> (+63) 9123456789/ (02) 987 6543</p>
+        <p><strong>Hours:</strong> 10:00 - 18:00, Mon-Sat</p>
+
+        <div class="follow">
+          <h4>Follow Us</h4>
+          <div class="icon">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-pinterest-p"></i>
+            <i class="fab fa-youtube"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <h4>About</h4>
+        <a href="/about-page/about.html">About Us</a>
+        <a href="/about-page/termsconditions.html">Terms and Conditions</a>
+        <a href="/contact-page/contact.html">Contact Us</a>
+      </div>
+
+      <div class="col">
+        <h4>My Account</h4>
+        <a href="#" id="signinfooter">Sign In</a>
+        <a href="/wishlist/wishlist.php" id="mywishlist">My Wishlist</a>
+        <a href="#" id="ordersfooter">Track My Order</a>
+        <a href="/about-page/help.html">Help</a>
+      </div>
+
+      <div class="col install">
+        <h4>Install App</h4>
+        <p>From App Store or Google Play</p>
+        <div class="row">
+          <img src="/homepage/imgs/apps.png" alt="apps">
+        </div>
+        <p>Secured Payment Gateways</p>
+        <img src="/homepage/imgs/payments.png" alt="payments">
+      </div>
+
+      <div class="copyright">
+        <p>BSCS 2-4, CS-Free Elective 2</p>
+      </div>
+    </footer>
+  </body>
+</html>
