@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Volution | Blog</title>
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    />
+    <link
+    href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+    rel="stylesheet"
+  />
+    <link rel="stylesheet" href="/homepage/styles.css" />
+  </head>
+
+  <body onload="clickable()">
+    
+    <script>
+      function clickable(){
+        var loggedinUser = localStorage.getItem("userLoggedIn");
+          console.log(loggedinUser);
+
+          if(loggedinUser==0 || loggedinUser == null){
+            document.getElementById('wishlist').href = "/log-in-page/log-in.php";
+            document.getElementById('mywishlist').href = "/log-in-page/log-in.php";
+            document.getElementById('signin').href = "/log-in-page/log-in.php";
+            document.getElementById('signinfooter').href = "/log-in-page/log-in.php";
+            document.getElementById('orders').href ="/log-in-page/log-in.php";
+            document.getElementById('ordersfooter').href = "/log-in-page/log-in.php";
+            document.getElementById("add-wishlist").onclick = function () {
+                        location.href = "/log-in-page/log-in.php";
+                    };
+          }
+          else{
+            document.getElementById('wishlist').href = "/wishlist/wishlist.php";
+              document.getElementById('mywishlist').href = "/wishlist/wishlist.php";
+            document.getElementById('signin').innerHTML = "Log Out";
+            document.getElementById('signin').onclick = function(){
+              document.logoutForm.submit();
+            };
+            document.getElementById('signinfooter').href = "/index.php";
+            document.getElementById('orders').href = "/shop-page/orders.php";
+            document.getElementById('ordersfooter').href = "/shop-page/orders.php";
+          
+          }
+      };
+    </script>
+
+    <section id="header">
+      
+      <img src="/logodark.png" alt="logo" class="logo">
+      <div>
+        <ul id="navbar">
+          <li><a href="/index.php">Home</a></li>
+          <li><a href="/shop-page/shop.html">Shop</a></li>
+          <li><a class="active" href="/blog-page/blog.html">Blog</a></li>
+          <li><a href="#" id="signin">Sign In</a></li>
+          <li><a href="/contact-page/contact.html">Contact</a></li>
+          <li>
+            <a href="#" id="wishlist"><i class="far fa-heart"></i></a>
+          </li>
+          <li>
+            <a href="#" id="orders"><i class='bx bx-car'></i></a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="page-header" class="blog-header">
+      <h2 class="blog-h2">Reading is Power</h2>
+      <p class="blog-p">Read all case studies related to Electronic Vehicles below</p>
+    </section>
+
+
+    <form action="/homepage/logout.php" method="POST" id="logoutForm" name="logoutForm" hidden>
+      <input type="number" value="0" name="logNum">
+    </form>
+
+    <section id="blog">
+      <div class="blog-box">
+        <div class="blog-img">
+          <img src="/blog-page/imgs/blog page2 1.jpg" alt="blog 1">
+        </div>
+        <div class="blog-details">
+          <h4>Not just batteries: The chemistry of electric cars</h4>
+          <p>The materials required in battery-powered cars are providing new challenges to chemists and the chemical industry. Clare Sansom reports</p>
+          <p>The internal combustion engine is not dead, but it may be beginning to die. One of the few bold steps taken at the November 2021 Cop26 climate conference in Glasgow, UK, was a declaration on phasing out sales of petrol and diesel cars by 2040 in all markets and by 2035 in leading ones: many European countries have set earlier dates, with the UK opting for 2030. Even this timetable seems frustratingly slow to many, but it is probably the earliest that the automotive industry, with its long lead times, can support.</p>
+          <a href="https://www.chemistryworld.com/features/not-just-batteries-the-chemistry-of-electric-cars/4015513.article" target="_blank"> CONTINUE READING</a>
+        </div>
+        <h1>4/25/22</h1>
+      </div>
+
+      <div class="blog-box">
+        <div class="blog-img">
+          <img src="/blog-page/imgs/blog page2 2.jpg" alt="blog 1">
+        </div>
+        <div class="blog-details">
+          <h4>9-minute battery charging could accelerate electric vehicles’ prospect</h4>
+          <p>One of the key roadblocks holding back electric vehicles may have been broken after US researchers found a way to charge batteries enough in under nine minutes to keep a car on the road for 200 miles. By heating up typical lithium-ion batteries Chao-Yang Wang from Pennsylvania State University and colleagues suppress chemical problems hampering fast charging. ‘We are pushing the boundary and striving to achieve five minute charging to 80% energy without damaging the battery,’ Wang tells Chemistry World. ‘This will allow us to achieve parity with gasoline refuelling.’</p>
+          <a href="https://www.chemistryworld.com/news/9-minute-battery-charging-could-accelerate-electric-vehicles-prospects/4010599.article" target="_blank"> CONTINUE READING</a>
+        </div>
+        <h1>1/11/19</h1>
+      </div>
+
+      <div class="blog-box">
+        <div class="blog-img">
+          <img src="/blog-page/imgs/blog page2 3.jpg" alt="blog 1">
+        </div>
+        <div class="blog-details">
+          <h4>The elements of future energy</h4>
+          <p>The hydrogen-powered future is upon us. Preparing for it will require new technology – and chemistry is here to help.</p>
+          <p>Climate change is one of the greatest challenges facing the world today. As governments across the globe drive to reduce greenhouse gas emissions by using cleaner, greener and more renewable energy sources, new technologies will play a pivotal role in shaping the future of society. Johnson Matthey (JM), a global leader in applied science and sustainable technologies, is developing new solutions to meet this demand for cleaner energy..</p>
+          <a href="https://www.chemistryworld.com/sponsored-content/the-elements-of-future-energy/3010312.article" target="_blank"> CONTINUE READING</a>
+        </div>
+        <h1>4/27/19</h1>
+      </div>
+    </section>
+
+    <section id="pagination" class="section-p1">
+      <a href="/blog-page/blog.html"><i class="fal fa-long-arrow-alt-left"></i></a> 
+      <a href="/blog-page/blog.html">1</a>
+      <a href="#" style="background-color:#218490;">2</a>
+      <a href="/blog-page/blog-page-3.html"><i class="fal fa-long-arrow-alt-right"></i></a>
+    </section>
+
+    <section id="newsletter" class="section-p1 section-m1">
+      <div class="newstext">
+        <h4>Sign Up For Newsletters</h4>
+        <p>
+          Get E-mail updates about our latest shop and
+          <span>special offers.</span>
+        </p>
+      </div>
+
+      <div class="form">
+        <input type="text" placeholder="Your email address" />
+        <button class="normal">Sign Up</button>
+      </div>
+    </section>
+
+    <footer class="section-p1">
+      <div class="col">
+
+        <img class="logo" src="/logo1.png" alt="">
+        <h4>Contact</h4>
+        <p><strong>Address:</strong> 1016 Anonas, Sta. Mesa, Maynila, Kalakhang Maynila</p>
+        <p><strong>Phone:</strong> (+63) 9123456789/ (02) 987 6543</p>
+        <p><strong>Hours:</strong> 10:00 - 18:00, Mon-Sat</p>
+
+        <div class="follow">
+          <h4>Follow Us</h4>
+          <div class="icon">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-pinterest-p"></i>
+            <i class="fab fa-youtube"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <h4>About</h4>
+        <a href="/about-page/about.html">About Us</a>
+        <a href="/about-page/termsconditions.html">Terms and Conditions</a>
+        <a href="/contact-page/contact.html">Contact Us</a>
+      </div>
+
+      <div class="col">
+        <h4>My Account</h4>
+        <a href="#" id="signinfooter">Sign In</a>
+        <a href="/wishlist/wishlist.php" id="mywishlist">My Wishlist</a>
+        <a href="#" id="ordersfooter">Track My Order</a>
+        <a href="/about-page/help.html">Help</a>
+      </div>
+
+      <div class="col install">
+        <h4>Install App</h4>
+        <p>From App Store or Google Play</p>
+        <div class="row">
+          <img src="/homepage/imgs/apps.png" alt="apps">
+        </div>
+        <p>Secured Payment Gateways</p>
+        <img src="/homepage/imgs/payments.png" alt="payments">
+      </div>
+
+      <div class="copyright">
+        <p>BSCS 2-4, CS-Free Elective 2</p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Volution | Blog</title>
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    />
+    <link
+    href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+    rel="stylesheet"
+  />
+    <link rel="stylesheet" href="/homepage/styles.css" />
+  </head>
+
+  <body onload="clickable()">
+    <section id="header">
+
+        <img src="/logodark.png" alt="logo" class="logo">
+      <div>
+        <ul id="navbar">
+          <li><a href="/index.php">Home</a></li>
+          <li><a href="/shop-page/shop.html">Shop</a></li>
+          <li><a class="active" href="/blog-page/blog.html">Blog</a></li>
+          <li><a href="#" id="signin">Sign In</a></li>
+          <li><a href="/contact-page/contact.html">Contact</a></li>
+          <li>
+            <a href="#" id="wishlist"><i class="far fa-heart"></i></a>
+          </li>
+          <li>
+            <a href="#" id="orders"><i class='bx bx-car'></i></a>
+          </li>
+        </ul>
+      </div>
+
+    </section>
+
+    <section id="page-header" class="blog-header">
+      <h2 class="blog-h2">Reading is Power</h2>
+      <p class="blog-p">Read all case studies related to Electronic Vehicles below</p>
+    </section>
+
+      <form action="/homepage/logout.php" method="POST" id="logoutForm" name="logoutForm" hidden>
+        <input type="number" value="0" name="logNum">
+      </form>
+      <script>
+        function clickable(){
+          var loggedinUser = localStorage.getItem("userLoggedIn");
+            console.log(loggedinUser);
+           
+            if(loggedinUser==0 || loggedinUser == null){
+              document.getElementById('wishlist').href = "/log-in-page/log-in.php";
+              document.getElementById('mywishlist').href = "/log-in-page/log-in.php";
+              document.getElementById('signin').href = "/log-in-page/log-in.php";
+              document.getElementById('signinfooter').href = "/log-in-page/log-in.php";
+              document.getElementById('orders').href ="/log-in-page/log-in.php";
+            document.getElementById('ordersfooter').href = "/log-in-page/log-in.php";
+              document.getElementById("add-wishlist").onclick = function () {
+                          location.href = "/log-in-page/log-in.php";
+                      };
+            }
+            else{
+  
+              document.getElementById('wishlist').href = "/wishlist/wishlist.php";
+              document.getElementById('mywishlist').href = "/wishlist/wishlist.php";
+              document.getElementById('signin').innerHTML = "Log Out";
+              document.getElementById('signin').onclick = function(){
+                document.logoutForm.submit();
+              };
+              document.getElementById('signinfooter').href = "/index.php";
+              
+            document.getElementById('orders').href = "/shop-page/orders.php";
+            document.getElementById('ordersfooter').href = "/shop-page/orders.php";
+          
+            }
+        };
+      </script>
+    <section id="blog">
+      <div class="blog-box">
+        <div class="blog-img">
+          <img src="/blog-page/imgs/blog 1.png" alt="blog 1">
+        </div>
+        <div class="blog-details">
+          <h4>Electric vehicles are not just the wave of the future, they are saving lives today.</h4>
+          <p>Ten things to know about electric vehicles — and how you can make the future electric. </p>
+          <p>It's more than just passenger cars now — from New York to Mississippi, you may find yourself on a quiet, zipping electric transit bus. The first electric fire truck in the nation will be welcomed by Angelenos in 2021 — and in the coming years, electric sanitation trucks will be quietly gliding through neighborhoods to pick up garbage and recycling, and more electric trucks will be delivering packages from warehouses to homes, air pollution-free.</p>
+          <a href="https://earthjustice.org/features/electric-vehicles-explainer?gclid=Cj0KCQjwmuiTBhDoARIsAPiv6L-QTx5N5R3Gsa_Ic0cbxnJblNFZ-vpXAJtK-6v3XvlRackQ8DJZtGYaAj-CEALw_wcB" target="_blank"> CONTINUE READING</a>
+        </div>
+        <h1>6/25/20</h1>
+      </div>
+
+      <div class="blog-box">
+        <div class="blog-img">
+          <img src="/blog-page/imgs/blog 2.png" alt="blog 1">
+        </div>
+        <div class="blog-details">
+          <h4>Electric car battery shortage looms in 2025, warns Stellantis boss</h4>
+          <p>Carlos Tavares says planned production boost won’t cope with surging demand for electric vehicles.</p>
+          <p>The chief executive of Stellantis, one of the world’s biggest carmakers, has warned battery shortages could affect the industry as soon as 2025 as the transition towards electric vehicles accelerates.</p>
+          <a href="https://www.theguardian.com/business/2022/may/10/electric-car-battery-shortage-looms-in-2025-warns-stellantis-boss" target="_blank"> CONTINUE READING</a>
+        </div>
+        <h1>5/10/22</h1>
+      </div>
+
+      <div class="blog-box">
+        <div class="blog-img">
+          <img src="/blog-page/imgs/blog 3.png" alt="blog 1">
+        </div>
+        <div class="blog-details">
+          <h4>Elon Musk: Tesla might stop taking orders on some vehicles because of long delivery times</h4>
+          <p>Elon Musk said that Tesla may stop taking orders on some models of its popular electric vehicles because of the long delivery timelines.</p>
+          <p>There's currently a rush to order electric vehicles as the technology gains momentum - both naturally, as it becomes more mainstream, and in the short term, more directly through the gas price increase.</p>
+          <a href="https://electrek.co/2022/05/10/elon-musk-tesla-might-stop-taking-orders-on-some-vehicles-because-of-long-delivery-times/" target="_blank"> CONTINUE READING</a>
+        </div>
+        <h1>5/10/22</h1>
+      </div>
+    </section>
+
+    <section id="pagination" class="section-p1">
+      <a href="#" style="background-color:#218490;">1</a>
+      <a href="/blog-page/blog-page-2.html">2</a>
+      <a href="/blog-page/blog-page-2.html"><i class="fal fa-long-arrow-alt-right"></i></a>
+    </section>
+
+    <section id="newsletter" class="section-p1 section-m1">
+      <div class="newstext">
+        <h4>Sign Up For Newsletters</h4>
+        <p>
+          Get E-mail updates about our latest shop and
+          <span>special offers.</span>
+        </p>
+      </div>
+
+      <div class="form">
+        <input type="text" placeholder="Your email address" />
+        <button class="normal">Sign Up</button>
+      </div>
+    </section>
+
+    <footer class="section-p1">
+      <div class="col">
+
+        <img class="logo" src="/logo1.png" alt="">
+        <h4>Contact</h4>
+        <p><strong>Address:</strong> 1016 Anonas, Sta. Mesa, Maynila, Kalakhang Maynila</p>
+        <p><strong>Phone:</strong> (+63) 9123456789/ (02) 987 6543</p>
+        <p><strong>Hours:</strong> 10:00 - 18:00, Mon-Sat</p>
+
+        <div class="follow">
+          <h4>Follow Us</h4>
+          <div class="icon">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-pinterest-p"></i>
+            <i class="fab fa-youtube"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <h4>About</h4>
+        <a href="/about-page/about.html">About Us</a>
+        <a href="/about-page/termsconditions.html">Terms and Conditions</a>
+        <a href="/contact-page/contact.html">Contact Us</a>
+      </div>
+
+      <div class="col">
+        <h4>My Account</h4>
+        <a href="#" id="signinfooter">Sign In</a>
+        <a href="/wishlist/wishlist.php" id="mywishlist">My Wishlist</a>
+        <a href="#" id="ordersfooter">Track My Order</a>
+        <a href="/about-page/help.html">Help</a>
+      </div>
+
+      <div class="col install">
+        <h4>Install App</h4>
+        <p>From App Store or Google Play</p>
+        <div class="row">
+          <img src="/homepage/imgs/apps.png" alt="apps">
+        </div>
+        <p>Secured Payment Gateways</p>
+        <img src="/homepage/imgs/payments.png" alt="payments">
+      </div>
+
+      <div class="copyright">
+        <p>BSCS 2-4, CS-Free Elective 2</p>
+      </div>
+    </footer>
+  </body>
+</html>

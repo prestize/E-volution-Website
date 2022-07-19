@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Volution | Blog</title>
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    />
+    <link
+    href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+    rel="stylesheet"
+   />
+    <link rel="stylesheet" href="/homepage/styles.css" />
+  </head>
+
+  <body onload="clickable()">
+      <script>
+        function clickable(){
+          var loggedinUser = localStorage.getItem("userLoggedIn");
+          console.log(loggedinUser);
+      
+          if(loggedinUser==0 || loggedinUser == null){
+            document.getElementById('wishlist').href = "/log-in-page/log-in.php";
+            document.getElementById('mywishlist').href = "/log-in-page/log-in.php";
+            document.getElementById('signin').href = "/log-in-page/log-in.php";
+            document.getElementById('signinfooter').href = "/log-in-page/log-in.php";
+            document.getElementById('orders').href ="/log-in-page/log-in.php";
+            document.getElementById('ordersfooter').href = "/log-in-page/log-in.php";
+            document.getElementById("add-wishlist").onclick = function () {
+                        location.href = "/log-in-page/log-in.php";
+                    };
+          }
+          else{
+
+            document.getElementById('wishlist').href = "/wishlist/wishlist.php";
+              document.getElementById('mywishlist').href = "/wishlist/wishlist.php";
+            document.getElementById('signin').innerHTML = "Log Out";
+            document.getElementById('signin').onclick = function(){
+              document.logoutForm.submit();
+            };
+            document.getElementById('signinfooter').href = "/index.php";
+            document.getElementById('orders').href = "/shop-page/orders.php";
+            document.getElementById('ordersfooter').href = "/shop-page/orders.php";
+          }
+        };
+      </script>
+    <section id="header">
+      
+      <img src="/logodark.png" alt="logo" class="logo">
+      <div>
+        <ul id="navbar">
+          <li><a href="/index.php">Home</a></li>
+          <li><a href="/shop-page/shop.html">Shop</a></li>
+          <li><a class="active" href="/blog-page/blog.html">Blog</a></li>
+          <li><a href="#" id="signin">Sign In</a></li>
+          <li><a href="/contact-page/contact.html">Contact</a></li>
+          <li>
+            <a href="#" id="wishlist"><i class="far fa-heart"></i></a>
+          </li>
+          <li>
+            <a href="#" id="orders"><i class='bx bx-car'></i></a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="page-header" class="blog-header">
+      <h2 class="blog-h2">Reading is Power</h2>
+      <p class="blog-p">Read all case studies related to Electronic Vehicles below</p>
+    </section>
+
+      <form action="/homepage/logout.php" method="POST" id="logoutForm" name="logoutForm" hidden>
+        <input type="number" value="0" name="logNum">
+      </form>
+
+
+    <section id="blog">
+      <div class="blog-box">
+        <div class="blog-img">
+          <img src="/blog-page/imgs/blog page3 1.jpg" alt="blog 1">
+        </div>
+        <div class="blog-details">
+          <h4>The push towards making EVs more environmentally friendly</h4>
+          <p>Getting to carbon-neutral or even zero will depend on more than just switching to electric. We explore how manufacturers are doing their part.</p>
+          <p>The world is shifting closer and closer towards decarbonizing transportation. California, Canada, the EU and California are all working towards achieving this goal by 2030 and consumers are excited about the change. General Motors unveiled their newest vehicle to their Hummer lineup, and this time it’s electric. According to Motor Trend, it sold out in just minutes after its reveal. </p>
+          <a href="https://blog.evsolutions.com/the-push-towards-making-evs-more-environmentally-friendly" target="_blank"> CONTINUE READING</a>
+        </div>
+        <h1>4/05/20</h1>
+      </div>
+
+      <div class="blog-box">
+        <div class="blog-img">
+          <img src="/blog-page/imgs/blog page3 2.jpg" alt="blog 1">
+        </div>
+        <div class="blog-details">
+          <h4>How much does it cost to charge an EV?</h4>
+          <p>Switching from gas-powered to electric vehicles is an exciting step toward a greener world. As energy companies race to keep up with the growing demand for charging stations and affordable electric cars, customers are wondering: How much does it cost to charge an EV?</p>
+          <p>To kick things off, let’s look at what the average American would spend per hour charging their EV. The best way to calculate this on your own is by dividing your electric bill by the total number of Kilowatts used per hour (kWh). Then take how many kWh your vehicle runs on and multiply that by how much you typically pay in electricity per hour.</p>
+          <a href="https://blog.evsolutions.com/how-much-does-it-cost-to-charge-an-ev" target="_blank"> CONTINUE READING</a>
+        </div>
+        <h1>21/12/21</h1>
+      </div>
+
+      <div class="blog-box">
+        <div class="blog-img">
+          <img src="/blog-page/imgs/blog page3 3.jpg" alt="blog 1">
+        </div>
+        <div class="blog-details">
+          <h4>What To Look For In Your First EV</h4>
+          <p>Before you head to the dealership, what should you look for in your first EV? What kind of EV should you buy? Let's walk through how to find the best EV for you.</p>
+          <p>If you’ve driven around on the highway recently, you may have noticed an increasing number of electric vehicles (EV) on the road. This isn’t a new trend — more and more drivers are buying their first EV.</p>
+          <a href="https://blog.evsolutions.com/what-to-look-for-in-your-first-ev" target="_blank"> CONTINUE READING</a>
+        </div>
+        <h1>4/17/21</h1>
+      </div>
+    </section>
+
+    <section id="pagination" class="section-p1">
+      <a href="/blog-page/blog-page-2.html"><i class="fal fa-long-arrow-alt-left"></i></a> 
+      <a href="/blog-page/blog.html">1</a>
+      <a href="/blog-page/blog-page-2.html">2</a>
+      <a href="#" style="background-color:#218490;">3</a>
+    </section>
+
+    <section id="newsletter" class="section-p1 section-m1">
+      <div class="newstext">
+        <h4>Sign Up For Newsletters</h4>
+        <p>
+          Get E-mail updates about our latest shop and
+          <span>special offers.</span>
+        </p>
+      </div>
+
+      <div class="form">
+        <input type="text" placeholder="Your email address" />
+        <button class="normal">Sign Up</button>
+      </div>
+    </section>
+
+    <footer class="section-p1">
+      <div class="col">
+
+        <img class="logo" src="/logo1.png" alt="">
+        <h4>Contact</h4>
+        <p><strong>Address:</strong> 1016 Anonas, Sta. Mesa, Maynila, Kalakhang Maynila</p>
+        <p><strong>Phone:</strong> (+63) 9123456789/ (02) 987 6543</p>
+        <p><strong>Hours:</strong> 10:00 - 18:00, Mon-Sat</p>
+
+        <div class="follow">
+          <h4>Follow Us</h4>
+          <div class="icon">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-pinterest-p"></i>
+            <i class="fab fa-youtube"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <h4>About</h4>
+        <a href="/about-page/about.html">About Us</a>
+        <a href="/about-page/termsconditions.html">Terms and Conditions</a>
+        <a href="/contact-page/contact.html">Contact Us</a>
+      </div>
+
+      <div class="col">
+        <h4>My Account</h4>
+        <a href="#" id="signinfooter">Sign In</a>
+        <a href="/wishlist/wishlist.php" id="mywishlist">My Wishlist</a>
+        <a href="#" id="ordersfooter">Track My Order</a>
+        <a href="/about-page/help.html">Help</a>
+      </div>
+
+      <div class="col install">
+        <h4>Install App</h4>
+        <p>From App Store or Google Play</p>
+        <div class="row">
+          <img src="/homepage/imgs/apps.png" alt="apps">
+        </div>
+        <p>Secured Payment Gateways</p>
+        <img src="/homepage/imgs/payments.png" alt="payments">
+      </div>
+
+      <div class="copyright">
+        <p>BSCS 2-4, CS-Free Elective 2</p>
+      </div>
+    </footer>
+  </body>
+</html>
