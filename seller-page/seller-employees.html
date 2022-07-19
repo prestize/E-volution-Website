@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="/seller-page/seller-dashboard.css" />
+
+    <!----===== Boxicons CSS ===== -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    />
+    <!--<title>Dashboard Sidebar Menu</title>-->
+  </head>
+  <body>
+    <nav class="sidebar">
+      <header>
+        <div class="image-text">
+          <span class="image">
+            <!--<img src="logo.png" alt="">-->
+          </span>
+
+          <div class="text logo-text">
+            <span class="name">E-Volution</span>
+            <span class="profession">Merchant</span>
+            <span>Dashboard</span>
+          </div>
+        </div>
+
+        <i class="bx bx-chevron-right toggle"></i>
+      </header>
+
+      <div class="menu-bar">
+        <div class="menu">
+          <ul class="menu-links">
+            <li class="nav-link">
+              <a href="/seller-page/seller-product.php">
+                <i class="bx bxs-package icon"></i>
+                <span class="text nav-text">Products</span>
+              </a>
+            </li>
+
+            <li class="nav-link">
+              <a href="/seller-page/seller-addproduct.html">
+                <i class="bx bx-folder-plus icon"></i>
+                <span class="text nav-text">Add Products</span>
+              </a>
+            </li>
+
+            <!-- <li class="nav-link">
+              <a href="#">
+                <i class="bx bx-edit-alt icon"></i>
+                <span class="text nav-text">Edit Detail</span>
+              </a>
+            </li> -->
+
+            <li class="nav-link">
+              <a href="/seller-page/seller-orders.php">
+                <i class="bx bx-spreadsheet icon"></i>
+                <span class="text nav-text">Orders</span>
+              </a>
+            </li>
+
+            <li class="nav-link">
+              <a href="/seller-page/seller-notifications.html" class="active">
+                <i class="bx bx-id-card icon" ></i>
+                <span class="text nav-text">Employees</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bottom-content">
+          <li class="">
+            <a href="#" onclick="logoutUser()">
+              <i class="bx bx-log-out icon"></i>
+              <span class="text nav-text">Logout</span>
+            </a>
+          </li>
+        </div>
+      </div>
+    </nav>
+
+    <form action="/homepage/logout.php" method="POST" id="logoutForm" name="logoutForm" hidden>
+      <input type="number" value="0" name="logNum">
+    </form>
+
+  <script>
+    function logoutUser(){
+        document.logoutForm.submit();
+    }
+  </script>
+
+
+
+    <section class="home">
+      <div class="text">Employees</div>
+
+      <div class="order-table">
+        <table class="table">
+          <thead>
+            <th>Employee Number</th>
+            <th>Employee Name</th>
+            <th>Position</th>
+            <th>Address</th>
+            <th>Phone Number</th>
+            <th>Email</th>
+            <th>Status</th>
+          </thead>
+            <tbody>
+            <tr>
+              <td class="employee-ref-number">032912</td>
+              <td class="employee-name">Cain Skywalker</td>
+              <td class="employee-position">Manager</td>
+              <td class="employee-address">Araneta Center, Cubao, Quezon City</td>
+              <td class="employee-phone">09712671918</td>
+              <td class="employee-email">cainskywalker88@gmail.com</td>
+              <td class="employee-status ongoing">Full-Time</td>
+            </tr>
+            <tr>
+              <td class="employee-ref-number">035462</td>
+              <td class="employee-name">Scarlet Cruz</td>
+              <td class="employee-position">Marketing Supervisor</td>
+              <td class="employee-address">Caniogan, Pasig City</td>
+              <td class="employee-phone">09712671918</td>
+              <td class="employee-email">scarlecruz@gmail.com</td>
+              <td class="employee-status ongoing">Full-Time</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <script>
+      const body = document.querySelector("body"),
+        sidebar = body.querySelector("nav"),
+        toggle = body.querySelector(".toggle"),
+        searchBtn = body.querySelector(".search-box"),
+        modeSwitch = body.querySelector(".toggle-switch"),
+        modeText = body.querySelector(".mode-text");
+
+      toggle.addEventListener("click", () => {
+        sidebar.classList.toggle("close");
+      });
+    </script>
+  </body>
+</html>
